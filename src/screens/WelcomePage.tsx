@@ -2,8 +2,13 @@ import React from 'react';
 import { ImageBackground, StyleSheet, View, Text } from 'react-native';
 import { PWBasicButton } from '../components';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 function HomeScreen() {
+  const navigation = useNavigation();
+  const goToLogin = () => {
+    navigation.navigate('Login' as never);
+  }
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -16,7 +21,7 @@ function HomeScreen() {
         />
         <View style={styles.buttonContainer} >
           <Text style={styles.welcomeMessage}>A simplicidade financeira leva ao sucesso financeiro.</Text>
-          <PWBasicButton style={styles.buttonStyle} size='medium' rounded text="Começar" onPress={() => {}}  />
+          <PWBasicButton style={styles.buttonStyle} size='medium' rounded text="Começar" onPress={() => goToLogin()}  />
         </View>
       </ImageBackground>
     </View>

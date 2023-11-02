@@ -6,7 +6,9 @@ interface BasicButtonProps {
   size?: 'small' | 'medium' | 'large';
   rounded?: boolean;
   text?: string;
-  style?: StyleProp<ViewStyle>; // Alteramos o tipo para permitir um estilo personalizado.
+  style?: StyleProp<ViewStyle>; 
+  textStyle?: any;
+  textColor?: string;
   onPress?: () => void;
 }
 
@@ -15,7 +17,9 @@ const BasicButton: React.FC<BasicButtonProps> = ({
   size = 'medium',
   rounded = false,
   text = 'Button',
-  style = {}, // Estilo personalizado
+  style = {}, 
+  textStyle = {},
+  textColor = '#fff',
   onPress = () => {}
 }) => {
   const buttonStyle: ViewStyle = {
@@ -27,7 +31,7 @@ const BasicButton: React.FC<BasicButtonProps> = ({
   };
 
   const buttonTextStyle = {
-    color: '#fff',
+    color: textColor,
   };
 
   const getHeightForButton = (size: 'small' | 'medium' | 'large') => ({
@@ -48,7 +52,7 @@ const BasicButton: React.FC<BasicButtonProps> = ({
       onPress={onPress}
       activeOpacity={0.98}
     >
-      <Text style={[buttonTextStyle as ViewStyle, { fontSize: getFontSizeForButton(size) }]}>{text}</Text>
+      <Text style={[buttonTextStyle as ViewStyle,  { fontSize: getFontSizeForButton(size) }, textStyle  ]}>{text}</Text>
     </TouchableOpacity>
   );
 };
