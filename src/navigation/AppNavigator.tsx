@@ -16,7 +16,7 @@ function AppNavigator() {
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Principal" component={HomeScreen} />
       <Stack.Screen name="LoginStepTwo" component={LoginStepTwo} />
-
+      
 
       {/* Dashboard */}
       <Stack.Screen name="Homepage" component={Dashboard} />

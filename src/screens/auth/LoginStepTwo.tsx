@@ -27,9 +27,6 @@ function Login() {
       navigation.navigate('Homepage' as never);
     }
   };
-  const goToLogin = () => {
-    navigation.navigate('Login' as never);
-  };
   const goBack = () => {
     navigation.goBack();
   };

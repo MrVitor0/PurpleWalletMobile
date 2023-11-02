@@ -37,7 +37,7 @@ const PWNextButton: React.FC<PWNextButtonProps> = ({
     return (
         <TouchableOpacity
             style={[styles.button as ViewStyle, style as ViewStyle]}
-            activeOpacity={0.75}
+            activeOpacity={0.25}
             onPress={onPress}
         >
             {children}

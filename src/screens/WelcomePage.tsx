@@ -20,7 +20,7 @@ function HomeScreen() {
           style={styles.gradient}
         />
         <View style={styles.buttonContainer} >
-          <Text style={styles.welcomeMessage}>A simplicidade financeira leva ao sucesso financeiro.</Text>
+          <Text style={styles.welcomeMessage}>A simplicidade financeira leva ao sucesso financeiro</Text>
           <PWBasicButton style={styles.buttonStyle} size='medium' rounded text="Começar" onPress={() => goToLogin()}  />
         </View>
       </ImageBackground>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   welcomeMessage: {
     fontSize: 30,
     color: '#fff',
-    textAlign: 'left',
+    textAlign: 'center',
     fontWeight: 'bold',
     marginBottom: 20,
   },
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     bottom: 0,
-    paddingHorizontal: 5,
+    paddingHorizontal: 6,
     width: '100%',
     marginBottom: 40,
   },

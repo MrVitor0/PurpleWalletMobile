@@ -6,8 +6,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AuthStyles } from '../../styles/sharedStyles';
 import { PWNextButton, PWBasicButton } from '../../components';
 
-
-
 function Login() {
   const navigation = useNavigation();
  
@@ -15,18 +13,13 @@ function Login() {
 
   const validateUserEmailAndGo = () => {
     if (email === '') {
-     //Por favor, preencha o campo de e-mail
     } else {
       navigation.navigate('LoginStepTwo' as never);
     }
   };
-  const goToLogin = () => {
-    navigation.navigate('Login' as never);
-  };
   const goBack = () => {
     navigation.goBack();
   };
- 
 
   return (
     <View style={AuthStyles.container}>
