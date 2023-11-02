@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, View, ViewStyle } from 'react-native';
+import { TouchableOpacity, Text, ViewStyle } from 'react-native';
 
 interface BasicButtonProps {
   color?: string;
@@ -18,7 +18,7 @@ const BasicButton: React.FC<BasicButtonProps> = ({
 }) => {
   const buttonStyle: ViewStyle = {
     backgroundColor: color,
-    borderRadius: rounded ? 10 : 0,
+    borderRadius: rounded ? 50 : 0,
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
@@ -26,24 +26,27 @@ const BasicButton: React.FC<BasicButtonProps> = ({
 
   const buttonTextStyle = {
     color: '#fff',
-    fontSize: 16,
   };
 
-  const styles = StyleSheet.create({
-    small: {
-      height: 40,
-    },
-    medium: {
-      height: 50,
-    },
-    large: {
-      height: 70,
-    },
-  });
+  const getHeightForButton = (size: 'small' | 'medium' | 'large') => ({
+    small: 40,
+    medium: 50,
+    large: 70,
+  })[size];
 
+  const getFontSizeForButton = (size: 'small' | 'medium' | 'large') => ({
+    small: 14,
+    medium: 20,
+    large: 25,
+  })[size];
+  
   return (
-    <TouchableOpacity style={[buttonStyle as ViewStyle, styles[size]]} onPress={onPress}>
-      <Text style={buttonTextStyle}>{text}</Text>
+    <TouchableOpacity 
+      style={[buttonStyle as ViewStyle, {height: getHeightForButton(size)}]} 
+      onPress={onPress}
+      activeOpacity={0.98}
+    >
+      <Text style={[buttonTextStyle as ViewStyle, {fontSize: getFontSizeForButton(size)}]}>{text}</Text>
     </TouchableOpacity>
   );
 };
