@@ -75,18 +75,25 @@ const styles = StyleSheet.create({
     color: 'white',
     size: 40,
   },
+
+  formForgotPassword: {
+    fontSize: 10,
+    textAlign: 'left',
+    color: 'rgba(48, 48, 48, 0.7)',
+    marginBottom: 20,
+  },
 });
 
 function Login() {
   const navigation = useNavigation();
  
-  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const validateUserEmailAndGo = () => {
-    if (email === '') {
-     //Por favor, preencha o campo de e-mail
+  const validatePasswordAndPassword = () => {
+    if (password === '') {
+     //Por favor, preencha o campo de senha
     } else {
-      navigation.navigate('LoginStepTwo' as never);
+      navigation.navigate('Homepage' as never);
     }
   };
   const goToLogin = () => {
@@ -100,18 +107,9 @@ function Login() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.3)']}
+        colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.2)']}
         style={styles.gradient}
       />
-      <View style={styles.buttonContainer}>
-        <PWNextButton color="#A244FF" size={80} onPress={() => validateUserEmailAndGo()}>
-          <MaterialCommunityIcons
-            name="account-arrow-right-outline"
-            color={styles.buttonIcon.color}
-            size={styles.buttonIcon.size}
-          />
-        </PWNextButton>
-      </View>
       <View style={styles.buttonGroupContainer}>
         <View style={styles.topLeftButtonContainer}>
           <MaterialCommunityIcons
@@ -135,19 +133,10 @@ function Login() {
       </View>
       <View style={styles.centerTextContainer}>
         <Text style={styles.formTitle}>
-          Boas-vindas ao PurpleWallet!
+          Homepage Sample
           {'\n'}
-          Qual é o seu e-mail?
+          Qual é a sua senha?
         </Text>
-        <Text style={styles.formSubTitle}>
-          Iremos precisar de algumas informações para realizar o seu cadastro ou acessar o aplicativo
-        </Text>
-        <TextInput
-          style={styles.textInput}
-          placeholder="John@doe.com"
-          placeholderTextColor="#303030"
-          onChangeText={(text) => setEmail(text)}
-        />
       </View>
     </View>
   );
