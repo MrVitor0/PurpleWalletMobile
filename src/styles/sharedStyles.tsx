@@ -22,7 +22,7 @@ const AuthStyles = StyleSheet.create({
     buttonGroupContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      margin: 20,
+      marginHorizontal: 20,
     },
     topLeftButtonContainer: {
       position: 'absolute',
@@ -36,7 +36,7 @@ const AuthStyles = StyleSheet.create({
       top: 0,
       marginTop: 60,
     },
-    centerTextContainer: {
+    alignItems: {
       flex: 1,
       top: 100,
       margin: 20,

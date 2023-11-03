@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator, StackNavigationProp  } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import AuthScreen from '../screens/auth/Login';
 import LoginStepTwo from '../screens/auth/LoginStepTwo';
@@ -15,7 +15,6 @@ const Stack = createStackNavigator();
 function AuthStackNavigator() {
   return (
     <AuthStack.Navigator screenOptions={{
-      headerShown: false,
       header: () => <AuthHeader />
     }}>
       <AuthStack.Screen name="Login" component={AuthScreen} />

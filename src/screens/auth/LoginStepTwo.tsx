@@ -47,28 +47,7 @@ function Login() {
           />
         </PWNextButton>
       </View>
-      <View style={AuthStyles.buttonGroupContainer}>
-        <View style={AuthStyles.topLeftButtonContainer}>
-          <MaterialCommunityIcons
-            name="arrow-left"
-            color="#303030"
-            size={20}
-            onPress={() => goBack()}
-          />
-        </View>
-        <View style={AuthStyles.topRightButtonContainer}>
-          <PWBasicButton
-            style={AuthStyles.buttonCornerTopRight}
-            textStyle={AuthStyles.textCornerTopStyle}
-            text="Português"
-            rounded
-            color="#fff"
-            textColor="#303030"
-            onPress={() => {}}
-          />
-        </View>
-      </View>
-      <View style={AuthStyles.centerTextContainer}>
+      <View style={AuthStyles.alignItems}>
         <Text style={AuthStyles.formTitle}>
           Bem-vindo (a) de volta João!
           {'\n'}
