@@ -3,11 +3,12 @@ import { ImageBackground, StyleSheet, View, Text } from 'react-native';
 import { PWBasicButton } from '../components';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigation } from '../navigation/Middleware';
 
-function HomeScreen() {
-  const navigation = useNavigation();
+function WelcomePage() {
+  const { navigate } = useNavigation<StackNavigation>();
   const goToLogin = () => {
-    navigation.navigate('Login' as never);
+    navigate("Auth");
   }
   return (
     <View style={styles.container}>
@@ -67,4 +68,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default WelcomePage;

@@ -6,14 +6,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { PWNextButton, PWBasicButton } from '../../components';
 import { AuthStyles } from '../../styles/sharedStyles';
 
-
 function Homepage() {
   const navigation = useNavigation();
- 
-
-  const goBack = () => {
-    navigation.goBack();
-  };
  
 
   return (
@@ -22,27 +16,6 @@ function Homepage() {
         colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.2)']}
         style={AuthStyles.gradient}
       />
-      <View style={AuthStyles.buttonGroupContainer}>
-        <View style={AuthStyles.topLeftButtonContainer}>
-          <MaterialCommunityIcons
-            name="arrow-left"
-            color="#303030"
-            size={20}
-            onPress={() => goBack()}
-          />
-        </View>
-        <View style={AuthStyles.topRightButtonContainer}>
-          <PWBasicButton
-            style={AuthStyles.buttonCornerTopRight}
-            textStyle={AuthStyles.textCornerTopStyle}
-            text="Português"
-            rounded
-            color="#fff"
-            textColor="#303030"
-            onPress={() => {}}
-          />
-        </View>
-      </View>
       <View style={AuthStyles.centerTextContainer}>
         <Text style={AuthStyles.formTitle}>
           Homepage Sample
