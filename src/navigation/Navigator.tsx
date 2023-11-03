@@ -6,11 +6,13 @@ import LoginStepTwo from '../screens/auth/LoginStepTwo';
 import WelcomeScreen from '../screens/WelcomePage';
 import DashboardScreen from '../screens/dashboard/Homepage';
 import AuthHeader from '../components/Navbar/AuthHeader';
-
+import DashboardHeader from '../components/Navbar/DashboardHeader';
 
 const AuthStack = createStackNavigator();
 const DashboardStack = createStackNavigator();
+const ApplicationStack = createStackNavigator();
 const Stack = createStackNavigator();
+
 
 function AuthStackNavigator() {
   return (
@@ -25,23 +27,32 @@ function AuthStackNavigator() {
 
 function DashboardStackNavigator() {
   return (
-    <DashboardStack.Navigator  initialRouteName='Principal' screenOptions={{
-      headerShown: false,
-      header: () => <AuthHeader />
+    <DashboardStack.Navigator  screenOptions={{
+      header: () => <DashboardHeader />
     }}>
-      <DashboardStack.Screen name="Principal" component={WelcomeScreen} />
       <DashboardStack.Screen name="Homepage" component={DashboardScreen} />
     </DashboardStack.Navigator>
   );
 }
 
-function Navigator() {
+function ApplicationStackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Main" screenOptions={{
+    <ApplicationStack.Navigator screenOptions={{
       headerShown: false,
     }}>
+      <ApplicationStack.Screen name="WelcomePage" component={WelcomeScreen} />
+    </ApplicationStack.Navigator>
+  );
+}
+
+function Navigator() {
+  return (
+    <Stack.Navigator initialRouteName="Application" screenOptions={{
+      headerShown: false,
+    }}>
+      <Stack.Screen name="Application" component={ApplicationStackNavigator} />
       <Stack.Screen name="Auth" component={AuthStackNavigator} />
-      <Stack.Screen name="Main" component={DashboardStackNavigator} />
+      <Stack.Screen name="Dashboard" component={DashboardStackNavigator} />
     </Stack.Navigator>
   );
 }

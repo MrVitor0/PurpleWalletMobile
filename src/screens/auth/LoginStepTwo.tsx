@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { ImageBackground, StyleSheet, View, Text, TextInput } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { PWNextButton, PWBasicButton } from '../../components';
 import { AuthStyles } from '../../styles/sharedStyles';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigation } from '../../navigation/Middleware';
+
 
 const styles = StyleSheet.create({
   formForgotPassword: {
@@ -17,18 +19,15 @@ const styles = StyleSheet.create({
 
 function Login() {
   const navigation = useNavigation();
- 
+  const { navigate } = useNavigation<StackNavigation>();
   const [password, setPassword] = useState('');
 
   const validatePasswordAndPassword = () => {
     if (password === '') {
      //Por favor, preencha o campo de senha
     } else {
-      navigation.navigate('Homepage' as never);
+      navigate('Dashboard' as never);
     }
-  };
-  const goBack = () => {
-    navigation.goBack();
   };
  
 

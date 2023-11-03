@@ -5,20 +5,16 @@ import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AuthStyles } from '../../styles/sharedStyles';
 import { PWNextButton, PWBasicButton } from '../../components';
-
+import { StackNavigation } from '../../navigation/Middleware';
 function Login() {
-  const navigation = useNavigation();
- 
+  const { navigate } = useNavigation<StackNavigation>();
   const [email, setEmail] = useState('');
 
   const validateUserEmailAndGo = () => {
     if (email === '') {
     } else {
-      navigation.navigate('LoginStepTwo' as never);
+      navigate('LoginStepTwo' as never);
     }
-  };
-  const goBack = () => {
-    navigation.goBack();
   };
 
   return (

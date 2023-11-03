@@ -72,5 +72,45 @@ const AuthStyles = StyleSheet.create({
     },
 });
 
+const DashboardHeaderStyles = StyleSheet.create({
+  headerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#581C87',
+    paddingTop: 60, // Adicione o padding no topo
+    paddingBottom: 10, // Adicione o padding no rodapé
+    paddingHorizontal: 10, // Adicione o padding horizontal
+  },
+  userArea: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  userPicture: {
+    width: 50,
+    height: 50,
+    marginRight: 10,
+    borderRadius: 25,
+  },
+  userNameLabel: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'space-between', 
+    flexDirection: 'row',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end', 
+  },
+  iconStyle: {
+    marginRight: 10,
+  },
+});
 
-export { AuthStyles } 
+
+export { AuthStyles, DashboardHeaderStyles } 

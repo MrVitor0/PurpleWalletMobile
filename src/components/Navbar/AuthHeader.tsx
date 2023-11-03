@@ -27,13 +27,13 @@ const AuthHeader = () => {
             </View>
             <View style={AuthStyles.topRightButtonContainer}>
                 <PWBasicButton
-                style={AuthStyles.buttonCornerTopRight}
-                textStyle={AuthStyles.textCornerTopStyle}
-                text="Português"
-                rounded
-                color="#fff"
-                textColor="#303030"
-                onPress={() => {}}
+                    style={AuthStyles.buttonCornerTopRight}
+                    textStyle={AuthStyles.textCornerTopStyle}
+                    text="Português"
+                    rounded
+                    color="#fff"
+                    textColor="#303030"
+                    onPress={() => {}}
                 />
             </View>
         </View>

@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Feather } from '@expo/vector-icons'; 
 import { PWBasicCard } from '../../components';
 import { AuthStyles } from '../../styles/sharedStyles';
+import { Entypo } from '@expo/vector-icons'; 
 
 const HomepageStyles = StyleSheet.create({
   homepageFlex: {
     flex: 1,
-    top: 100,
+    marginTop: 10,
     marginHorizontal: 10,
   },
   cardContainer: {
@@ -29,10 +29,6 @@ const HomepageStyles = StyleSheet.create({
     fontSize: 12,
     color: 'rgba(0,0,0,0.4)',
   },
-  cardIcon: {
-    color: 'black',
-    fontSize: 40,
-  },
 });
 
 function Homepage() {
@@ -49,10 +45,7 @@ function Homepage() {
             <Text style={HomepageStyles.cardAmount}>R$100,00</Text>
             <Text style={HomepageStyles.cardSubtitle}>R$250,00 em outros bancos</Text>
           </View>
-          <Feather 
-            style={HomepageStyles.cardIcon}
-            name="chevrons-right"
-          />
+          <Entypo name="chevron-thin-right" size={30} color="#303030" />
         </PWBasicCard>
       </View>
     </View>

@@ -8,7 +8,7 @@ import { StackNavigation } from '../navigation/Middleware';
 function WelcomePage() {
   const { navigate } = useNavigation<StackNavigation>();
   const goToLogin = () => {
-    navigate("Auth");
+    navigate("Dashboard");
   }
   return (
     <View style={styles.container}>
