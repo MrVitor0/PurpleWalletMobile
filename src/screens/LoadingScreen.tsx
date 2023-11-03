@@ -1,10 +1,8 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View } from 'react-native';
-import { PWBasicButton } from '../components';
+import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigation } from '../navigation/Middleware';
-import PPText from '../components/Label/PPText';
 
 function WelcomePage() {
   const { navigate } = useNavigation<StackNavigation>();
@@ -13,19 +11,10 @@ function WelcomePage() {
   }
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={require('../assets/welcome1.png')}
+      <View
         style={styles.backgroundImage}
       >
-        <LinearGradient
-          colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.8)']}
-          style={styles.gradient}
-        />
-        <View style={styles.buttonContainer} >
-          <PPText style={styles.welcomeMessage}>A simplicidade financeira leva ao sucesso financeiro</PPText>
-          <PWBasicButton style={styles.buttonStyle} size='medium' rounded text="Começar" onPress={() => goToLogin()}  />
-        </View>
-      </ImageBackground>
+      </View>
     </View>
   );
 }
@@ -43,6 +32,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     flex: 1,
+    backgroundColor: '#581C87',
     width: '100%',
     height: '100%',
     resizeMode: 'cover',

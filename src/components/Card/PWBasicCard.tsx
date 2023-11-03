@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
     const styles = StyleSheet.create({
         card: {
-            borderRadius: rounded ? 30 : 0,
+            borderRadius: rounded ? 20 : 0,
             backgroundColor: backgroundColor,
             height: height,
             width: width,
