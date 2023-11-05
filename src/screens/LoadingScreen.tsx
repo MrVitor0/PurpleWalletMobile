@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#fff',
     textAlign: 'center',
-    fontWeight: 'bold',
     marginBottom: 20,
   },
   backgroundImage: {

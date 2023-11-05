@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { ImageBackground, StyleSheet, View, Text, TextInput } from 'react-native';
+import { ImageBackground, StyleSheet, View, TextInput } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { PWNextButton, PWBasicButton } from '../../components';
 import { AuthStyles } from '../../styles/sharedStyles';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigation } from '../../navigation/Middleware';
-
+import PPText from '../../components/Label/PPText';
 
 const styles = StyleSheet.create({
   formForgotPassword: {
@@ -47,14 +47,14 @@ function Login() {
         </PWNextButton>
       </View>
       <View style={AuthStyles.alignItems}>
-        <Text style={AuthStyles.formTitle}>
+        <PPText style={AuthStyles.formTitle}>
           Bem-vindo (a) de volta João!
           {'\n'}
           Qual é a sua senha?
-        </Text>
-        <Text style={AuthStyles.formSubTitle}>
+        </PPText>
+        <PPText style={AuthStyles.formSubTitle}>
         Encontramos o seu cadastro, porém, por questões de segurança, precisamos confirmar a sua identidade. Por favor, digite a sua senha.
-        </Text>
+        </PPText>
         <TextInput
           style={AuthStyles.textInput}
           placeholder="*******"
@@ -62,9 +62,9 @@ function Login() {
           placeholderTextColor="#303030"
           onChangeText={(text) => setPassword(text)}
         />
-        <Text style={styles.formForgotPassword}  >
+        <PPText style={styles.formForgotPassword}  >
           Esqueceu a sua senha? Clique aqui
-        </Text>
+        </PPText>
       </View>
     </View>
   );

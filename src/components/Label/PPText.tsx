@@ -11,7 +11,6 @@ const PPText: React.FC<PoppinsTextProps> = ({ style, children }) => {
     const styles = StyleSheet.create({
         text: {
             fontFamily: 'Poppins-SemiBold',
-            color: 'red',
         },
     });
     return (

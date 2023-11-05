@@ -24,7 +24,6 @@ const HomepageStyles = StyleSheet.create({
   },
   cardAmount: {
     fontSize: 40,
-    fontWeight: '400',
   },
   cardSubtitle: {
     fontSize: 12,

@@ -4,6 +4,8 @@ const AuthStyles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#EBEBEB',
+      paddingHorizontal: 20,
+      paddingTop: 40 // Adicione o padding no topo
     },
     gradient: {
       position: 'absolute',
@@ -52,10 +54,9 @@ const AuthStyles = StyleSheet.create({
     },
     formTitle: {
       fontSize: 22,
-      fontWeight: 'bold',
     },
     formSubTitle: {
-      fontSize: 10,
+      fontSize: 12,
       textAlign: 'left',
       color: '#303030',
       marginBottom: 20,
@@ -95,7 +96,6 @@ const DashboardHeaderStyles = StyleSheet.create({
   userNameLabel: {
     color: '#fff',
     fontSize: 16,
-    fontWeight: 'bold',
   },
   container: {
     flex: 1,
