@@ -1,12 +1,13 @@
-import React from 'react';
-import { TouchableOpacity, Text, ViewStyle, StyleProp } from 'react-native';
+import React, { ReactNode, useState } from 'react';
+import { Pressable,  ViewStyle, StyleProp, StyleSheet } from 'react-native';
+import PPText from '../Label/PPText';
 
 interface BasicButtonProps {
   color?: string;
   size?: 'small' | 'medium' | 'large';
   rounded?: boolean;
   text?: string;
-  style?: StyleProp<ViewStyle>; 
+  style?: StyleProp<ViewStyle>;
   textStyle?: any;
   textColor?: string;
   onPress?: () => void;
@@ -14,47 +15,64 @@ interface BasicButtonProps {
 
 const BasicButton: React.FC<BasicButtonProps> = ({
   color = '#581C87',
-  size = 'medium',
+  size = 'small',
   rounded = false,
   text = 'Button',
-  style = {}, 
+  style = {},
   textStyle = {},
   textColor = '#fff',
   onPress = () => {}
 }) => {
-  const buttonStyle: ViewStyle = {
-    backgroundColor: color,
-    borderRadius: rounded ? 50 : 0,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
+  const [isPressed, setIsPressed] = useState(false);
+
+  const handlePressIn = () => {
+    setIsPressed(true);
   };
 
-  const buttonTextStyle = {
-    color: textColor,
+  const handlePressOut = () => {
+    setIsPressed(false);
   };
 
-  const getHeightForButton = (size: 'small' | 'medium' | 'large') => ({
-    small: 40,
-    medium: 50,
-    large: 70,
-  })[size];
-
-  const getFontSizeForButton = (size: 'small' | 'medium' | 'large') => ({
-    small: 14,
-    medium: 20,
-    large: 25,
-  })[size];
+  const buttonStyle = StyleSheet.create({
+    button: {
+      backgroundColor: color,
+      borderRadius: rounded ? 50 : 0,
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: getHeightForButton(size),
+      opacity: isPressed ? 0.7 : 1,
+    },
+    text: {
+      color: textColor,
+      fontSize: getFontSizeForButton(size),
+    },
+  });
 
   return (
-    <TouchableOpacity 
-      style={[buttonStyle as ViewStyle, { height: getHeightForButton(size) }, style]} 
+    <Pressable
+      style={[buttonStyle.button as ViewStyle, style as ViewStyle]}
       onPress={onPress}
-      activeOpacity={0.98}
+      onPressIn={handlePressIn}
+      onPressOut={handlePressOut}
     >
-      <Text style={[buttonTextStyle as ViewStyle,  { fontSize: getFontSizeForButton(size) }, textStyle  ]}>{text}</Text>
-    </TouchableOpacity>
+      <PPText style={buttonStyle.text}>
+        {text}
+      </PPText>
+    </Pressable>
   );
 };
+
+const getHeightForButton = (size: 'small' | 'medium' | 'large') => ({
+  small: 40,
+  medium: 50,
+  large: 70,
+})[size];
+
+const getFontSizeForButton = (size: 'small' | 'medium' | 'large') => ({
+  small: 14,
+  medium: 20,
+  large: 25,
+})[size];
 
 export default BasicButton;

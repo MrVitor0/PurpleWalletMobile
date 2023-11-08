@@ -27,6 +27,7 @@ const AuthHeader = () => {
             </View>
             <View style={AuthStyles.topRightButtonContainer}>
                 <PWBasicButton
+                    size='small'
                     style={AuthStyles.buttonCornerTopRight}
                     textStyle={AuthStyles.textCornerTopStyle}
                     text="Português"

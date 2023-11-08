@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ImageBackground, StyleSheet, View,  TextInput } from 'react-native';
+import { ImageBackground, StyleSheet, View,  TextInput  } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -24,15 +24,6 @@ function Login() {
         colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.3)']}
         style={AuthStyles.gradient}
       />
-      <View style={AuthStyles.buttonContainer}>
-        <PWNextButton color="#A244FF" size={80} onPress={() => validateUserEmailAndGo()}>
-          <MaterialCommunityIcons
-            name="account-arrow-right-outline"
-            color={AuthStyles.buttonIcon.color}
-            size={AuthStyles.buttonIcon.size}
-          />
-        </PWNextButton>
-      </View>
       <View style={AuthStyles.alignItems}>
         <PPText style={AuthStyles.formTitle}>
           Boas-vindas ao PurpleWallet!
@@ -48,6 +39,15 @@ function Login() {
           placeholderTextColor="#303030"
           onChangeText={(text) => setEmail(text)}
         />
+      </View>
+      <View style={AuthStyles.buttonContainer} >
+          <PWNextButton color="#A244FF" size={80} onPress={() => validateUserEmailAndGo()}>
+            <MaterialCommunityIcons
+              name="account-arrow-right-outline"
+              color={AuthStyles.buttonIcon.color}
+              size={AuthStyles.buttonIcon.size}
+            />
+          </PWNextButton>
       </View>
     </View>
   );

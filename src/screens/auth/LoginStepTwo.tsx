@@ -37,18 +37,9 @@ function Login() {
         colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.3)']}
         style={AuthStyles.gradient}
       />
-      <View style={AuthStyles.buttonContainer}>
-        <PWNextButton color="#A244FF" size={80} onPress={() => validatePasswordAndPassword()}>
-          <MaterialCommunityIcons
-            name="account-arrow-right-outline"
-            color={AuthStyles.buttonIcon.color}
-            size={AuthStyles.buttonIcon.size}
-          />
-        </PWNextButton>
-      </View>
       <View style={AuthStyles.alignItems}>
         <PPText style={AuthStyles.formTitle}>
-          Bem-vindo (a) de volta João!
+          Bem-vindo (a) de volta!
           {'\n'}
           Qual é a sua senha?
         </PPText>
@@ -65,6 +56,15 @@ function Login() {
         <PPText style={styles.formForgotPassword}  >
           Esqueceu a sua senha? Clique aqui
         </PPText>
+      </View>
+      <View style={AuthStyles.buttonContainer} >
+          <PWNextButton color="#A244FF" size={80} onPress={() => validatePasswordAndPassword()}>
+            <MaterialCommunityIcons
+              name="account-arrow-right-outline"
+              color={AuthStyles.buttonIcon.color}
+              size={AuthStyles.buttonIcon.size}
+            />
+          </PWNextButton>
       </View>
     </View>
   );

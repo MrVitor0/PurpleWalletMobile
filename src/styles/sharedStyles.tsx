@@ -15,11 +15,10 @@ const AuthStyles = StyleSheet.create({
       height: '30%',
     },
     buttonContainer: {
-      position: 'absolute',
-      right: 0,
-      bottom: 0,
-      marginBottom: 60,
-      marginRight: 20,
+      flex: 1,
+      justifyContent: 'flex-end', 
+      alignItems: 'flex-end',
+      paddingBottom: 40
     },
     buttonGroupContainer: {
       flexDirection: 'row',

@@ -23,12 +23,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  welcomeMessage: {
-    fontSize: 30,
-    color: '#fff',
-    textAlign: 'center',
-    marginBottom: 20,
-  },
   backgroundImage: {
     flex: 1,
     backgroundColor: '#581C87',
@@ -37,24 +31,6 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  gradient: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: '50%',
-  },
-  buttonContainer: {
-    position: 'absolute',
-    alignItems: 'center',
-    bottom: 0,
-    paddingHorizontal: 6,
-    width: '100%',
-    marginBottom: 40,
-  },
-  buttonStyle: {
-    width: '70%',
   },
 });
 

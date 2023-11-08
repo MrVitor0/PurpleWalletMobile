@@ -20,9 +20,10 @@ const DashboardHeader = () => {
         <SimpleLineIcons name="settings" style={DashboardHeaderStyles.iconStyle} size={24} color="#fff" />
         <SimpleLineIcons name="question" style={DashboardHeaderStyles.iconStyle} size={24} color="#fff" />
         <PWBasicButton 
+        size='small'
             style={AuthStyles.buttonCornerTopRight}
             textStyle={AuthStyles.textCornerTopStyle}
-            text="Outubro/2023"
+            text="Outubro/23"
             rounded
             color="#fff"
             textColor="#303030"

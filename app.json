@@ -24,8 +24,16 @@
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
       }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f280de03-117b-47f9-b5a2-1d50b7019096"
+      }
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/f280de03-117b-47f9-b5a2-1d50b7019096"
     }
   },
   "name": "sample"
 }
-  
