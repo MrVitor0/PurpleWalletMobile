@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import sample from './App';
 import { name as appName } from './app.json';
 import { registerRootComponent } from 'expo';
 /**
@@ -10,4 +10,4 @@ import { registerRootComponent } from 'expo';
 /**
  * @IMPORTANT If you pretend to use the expo CLI to run the app, uncomment the line below
 */
-registerRootComponent(App);
+registerRootComponent(sample);

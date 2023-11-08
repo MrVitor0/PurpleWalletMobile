@@ -1,16 +1,13 @@
 {
   "expo": {
-    "name": "sample",
-    "slug": "sample",
-    "fonts": [
-      {
-        "asset": "src/assets/fonts/Poppins-SemiBold.ttf"
-      }
-    ],
+    "name": "purplewallet",
+    "slug": "purplewallet",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -22,18 +19,24 @@
     },
     "android": {
       "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.purplecorp.purplewallet"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "f280de03-117b-47f9-b5a2-1d50b7019096"
+        "projectId": "c96e16e2-9cd6-4904-b572-0b7477c0e815"
       }
     },
-    "runtimeVersion": "1.0.0",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
     "updates": {
-      "url": "https://u.expo.dev/f280de03-117b-47f9-b5a2-1d50b7019096"
+      "url": "https://u.expo.dev/c96e16e2-9cd6-4904-b572-0b7477c0e815"
     }
-  },
-  "name": "sample"
+  }
 }
