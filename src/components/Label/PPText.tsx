@@ -20,4 +20,19 @@ const PPText: React.FC<PoppinsTextProps> = ({ style, children }) => {
     );
 };
 
+const PPTextRegular: React.FC<PoppinsTextProps> = ({ style, children }) => {
+    const styles = StyleSheet.create({
+        text: {
+            fontFamily: 'Poppins-Regular',
+        },
+    });
+    return (
+        <Text style={[styles.text, style]}>
+            {children}
+        </Text>
+    );
+};
+
 export default PPText;
+export { PPTextRegular };
+

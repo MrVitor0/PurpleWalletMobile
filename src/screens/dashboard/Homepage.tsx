@@ -1,29 +1,31 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { PWBasicCard } from '../../components';
-import { AuthStyles } from '../../styles/sharedStyles';
-import { Entypo } from '@expo/vector-icons'; 
+import { View, StyleSheet, ImageBackground} from 'react-native';
+import { PWBasicButton, PWBasicCard } from '../../components';
+import { Entypo, MaterialCommunityIcons, Feather, MaterialIcons    } from '@expo/vector-icons'; 
+import PPText, { PPTextRegular } from '../../components/Label/PPText';
 
 const HomepageStyles = StyleSheet.create({
+  flex: {
+    flex: 1,
+  },
   homepageFlex: {
     flex: 1,
-    marginTop: 10,
-    marginHorizontal: 10,
+    marginTop: 15,
+    marginHorizontal: 20,
   },
   cardContainer: {
     width: '100%',
-    height: '20%',
-    padding: 10,
-    marginBottom: 10,
+    height: 130,
+    padding: 25,
     alignItems: 'center', 
     flexDirection: 'row', 
     justifyContent: 'space-between', 
   },
   cardTitle: {
-    fontSize: 20,
+    fontSize: 12,
   },
   cardAmount: {
-    fontSize: 40,
+    fontSize: 25,
   },
   cardSubtitle: {
     fontSize: 12,
@@ -33,24 +35,69 @@ const HomepageStyles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap', // Permite que os elementos quebrem para a próxima linha
     justifyContent: 'space-between',
+    marginTop: 20
   },
   optionsCardContainer: {
     flexBasis: '23%', // Largura base de 45% para cada card
-    marginBottom: 5, 
-    padding: .7,
   },
   optionsContentContainer: {
     alignItems: 'center',
   },
   optionsContentLabel: {
     paddingTop: 5,
-    fontSize: 12,
-  }
+    fontSize: 8,
+  },
+  creditCardContainer: {
+    width: '100%',
+    marginTop: 20,
+    height: 200,
+  },
+  creditCardBackground: {
+    flex: 1, 
+    width: '100%', 
+    height: '100%', 
+    borderRadius: 15, 
+    overflow: 'hidden'
+  },
+  creditCardTitle: {
+    fontSize: 32, 
+    color: '#fff'
+  },
+  creditCardSubtitle: {
+    fontSize: 16, 
+    color: '#fff', 
+    marginLeft: 10, 
+    marginBottom: 10
+  },
+  creditCardTexts: {
+    flex: 1, 
+    justifyContent: 'flex-end', 
+    marginBottom: 20, 
+    marginLeft: 10
+  },
+  ctaContentLabel: {
+    fontSize: 15,
+    textAlign: 'left',
+  },
+  ctaCardContainer: {
+    width: '100%',
+    height: 130,
+    padding: 25,
+    alignItems: 'center', 
+    flexDirection: 'row', 
+    justifyContent: 'flex-start',
+    marginTop: 20,
+  },
+  ctaButton: {
+    marginTop: 10,
+    backgroundColor: '#D9D9D9',
+    borderRadius: 20,
+  },
 });
 
 function Homepage() {
   return (
-    <View style={AuthStyles.container}>
+    <View style={HomepageStyles.flex}>
       <View style={HomepageStyles.homepageFlex}>
         <PWBasicCard
           style={HomepageStyles.cardContainer}
@@ -58,14 +105,14 @@ function Homepage() {
           backgroundColor="#fff"
         >
         <View>
-          <Text style={HomepageStyles.cardTitle}>Conta</Text>
-          <Text style={HomepageStyles.cardAmount}>R$100,00</Text>
-          <Text style={HomepageStyles.cardSubtitle}>R$250,00 em outros bancos</Text>
+          <PPTextRegular style={HomepageStyles.cardTitle}>Saldo em Conta</PPTextRegular>
+          <PPText style={HomepageStyles.cardAmount}>R$100,00</PPText>
+          <PPTextRegular style={HomepageStyles.cardSubtitle}>R$250,00 em outros bancos</PPTextRegular>
         </View>
         <Entypo name="chevron-thin-right" size={30} color="#303030" />
       </PWBasicCard>
-
-
+      
+      {/* -- Slider Optionss Area */}
       <View style={HomepageStyles.optionsContainer}>
           <PWBasicCard
             style={HomepageStyles.optionsCardContainer}
@@ -73,8 +120,8 @@ function Homepage() {
             backgroundColor="#fff"
           >
             <View style={HomepageStyles.optionsContentContainer}>
-              <Entypo name="chevron-thin-right" size={30} color="#303030" />
-              <Text style={HomepageStyles.optionsContentLabel}>Contas Bancárias</Text>
+              <MaterialCommunityIcons  name="bank" size={30} color="#303030" />
+              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Contas</PPTextRegular>
             </View>
           </PWBasicCard>
           <PWBasicCard
@@ -83,8 +130,8 @@ function Homepage() {
             backgroundColor="#fff"
           >
             <View style={HomepageStyles.optionsContentContainer}>
-              <Entypo name="chevron-thin-right" size={30} color="#303030" />
-              <Text style={HomepageStyles.optionsContentLabel}>Cartões de Crédito</Text>
+              <Entypo name="credit-card" size={30} color="#303030" />
+              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Cartões</PPTextRegular>
             </View>
           </PWBasicCard>
           <PWBasicCard
@@ -93,8 +140,8 @@ function Homepage() {
             backgroundColor="#fff"
           >
             <View style={HomepageStyles.optionsContentContainer}>
-              <Entypo name="chevron-thin-right" size={30} color="#303030" />
-              <Text style={HomepageStyles.optionsContentLabel}>Seus Investimentos</Text>
+              <Feather name="activity" size={30} color="#303030" />
+              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Investimentos</PPTextRegular>
             </View>
           </PWBasicCard>
           <PWBasicCard
@@ -103,13 +150,38 @@ function Homepage() {
             backgroundColor="#fff"
           >
             <View style={HomepageStyles.optionsContentContainer}>
-              <Entypo name="chevron-thin-right" size={30} color="#303030" />
-              <Text style={HomepageStyles.optionsContentLabel}>Controle de Gastos</Text>
+              <MaterialIcons name="local-attraction" size={30} color="#303030" />
+              <PPTextRegular  style={HomepageStyles.optionsContentLabel}>Passeios</PPTextRegular>
             </View>
           </PWBasicCard>
         </View>
-     
+
+        {/* -- Credit Card Area */}
+        <View style={HomepageStyles.creditCardContainer}>
+          <ImageBackground 
+            source={require('../../assets/cardbg4.png')}
+            style={HomepageStyles.creditCardBackground}
+          >
+            <View style={HomepageStyles.creditCardTexts}>
+              <PPText style={HomepageStyles.creditCardTitle}>R$ 250,00</PPText>
+            </View>
+            <PPText style={HomepageStyles.creditCardSubtitle}>Cartões de Crédito</PPText>
+          </ImageBackground>
+        </View>
+        {/* -- PurpleWallet Call to Action */}
+        <PWBasicCard
+            style={HomepageStyles.ctaCardContainer}
+            rounded={true}
+            backgroundColor="#fff"
+          >
+            <View style={HomepageStyles.optionsContentContainer}>
+              <PPTextRegular  style={HomepageStyles.ctaContentLabel}> <PPTextRegular style={{ color: '#581C87' }}>Convide amigos</PPTextRegular> para desbloquear recompensas incríveis.</PPTextRegular>
+              <PWBasicButton textStyle={{ color: '#303030' }}  style={HomepageStyles.ctaButton} text={'Saiba Mais'} />
+            </View>
+          </PWBasicCard>
+
       </View>
+
     </View>
   );
 }

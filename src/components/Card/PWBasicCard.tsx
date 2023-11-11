@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({
     rounded = false,
     backgroundColor = '#fff',
     backgroundImage,
-    height = 100,
+    height = 80,
     width = 100,
     style = {},
     shadow = false,

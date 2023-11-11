@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import { Pressable,  ViewStyle, StyleProp, StyleSheet } from 'react-native';
-import PPText from '../Label/PPText';
+import PPText, { PPTextRegular } from '../Label/PPText';
 
 interface BasicButtonProps {
   color?: string;
@@ -56,9 +56,9 @@ const BasicButton: React.FC<BasicButtonProps> = ({
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
     >
-      <PPText style={[buttonStyle.text, textStyle as ViewStyle]}>
+      <PPTextRegular style={[buttonStyle.text, textStyle as ViewStyle]}>
         {text}
-      </PPText>
+      </PPTextRegular>
     </Pressable>
   );
 };

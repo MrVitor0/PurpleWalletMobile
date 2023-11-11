@@ -58,4 +58,4 @@ function Navigator() {
 }
 
 
-export default Navigator;
+export default DashboardStackNavigator;
