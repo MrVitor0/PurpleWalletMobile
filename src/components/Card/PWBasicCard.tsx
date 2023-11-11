@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, StyleSheet, ImageBackground, StyleProp, ViewStyle } from 'react-native';
+import React, { ReactNode, useState } from 'react';
+import { View, StyleSheet, ImageBackground, StyleProp, ViewStyle, Pressable } from 'react-native';
 
 interface CardProps {
     rounded?: boolean;
@@ -9,7 +9,9 @@ interface CardProps {
     width?: number;
     shadow?: boolean;
     style?: StyleProp<ViewStyle>;
+    containerStyle?: StyleProp<ViewStyle>;
     children?: React.ReactNode;
+    onPress?: () => void; // nova propriedade
 }
 
 const Card: React.FC<CardProps> = ({
@@ -19,9 +21,22 @@ const Card: React.FC<CardProps> = ({
     height = 80,
     width = 100,
     style = {},
+    containerStyle = {},
     shadow = false,
     children,
+    onPress, // nova propriedade
 }) => {
+    const [isPressed, setIsPressed] = useState(false);
+
+    const handlePressIn = () => {
+      setIsPressed(true);
+    };
+  
+    const handlePressOut = () => {
+      setIsPressed(false);
+    };
+
+    
     const styles = StyleSheet.create({
         card: {
             borderRadius: rounded ? 20 : 0,
@@ -35,6 +50,7 @@ const Card: React.FC<CardProps> = ({
                 width: 0,
                 height: 2,
             },
+            opacity: isPressed ? 0.7 : 1,
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,
@@ -42,14 +58,20 @@ const Card: React.FC<CardProps> = ({
     });
 
     return (
-        <View style={[styles.card, style as ViewStyle]}>
-            {backgroundImage ? (
-                <ImageBackground source={{ uri: backgroundImage }} style={{ flex: 1 }}>
-                    {children}
-                </ImageBackground>
-            ) : (
-                children
-            )}
+        <View style={[styles.card, style]}>
+            <Pressable  
+                style={containerStyle}
+                onPress={onPress}
+                onPressIn={handlePressIn}
+                onPressOut={handlePressOut}>
+                    {backgroundImage ? (
+                        <ImageBackground source={{ uri: backgroundImage }} style={{ flex: 1 }}>
+                            {children}
+                        </ImageBackground>
+                    ) : (
+                        children
+                    )}
+            </Pressable>
         </View>
     );
 };

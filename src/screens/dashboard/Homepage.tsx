@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, ImageBackground} from 'react-native';
+import { View, StyleSheet, ImageBackground, ScrollView} from 'react-native';
 import { PWBasicButton, PWBasicCard } from '../../components';
 import { Entypo, MaterialCommunityIcons, Feather, MaterialIcons    } from '@expo/vector-icons'; 
 import PPText, { PPTextRegular } from '../../components/Label/PPText';
@@ -17,6 +17,9 @@ const HomepageStyles = StyleSheet.create({
     width: '100%',
     height: 130,
     padding: 25,
+  },
+  cardInnerContainer: {
+    width: '100%',
     alignItems: 'center', 
     flexDirection: 'row', 
     justifyContent: 'space-between', 
@@ -42,6 +45,10 @@ const HomepageStyles = StyleSheet.create({
   },
   optionsContentContainer: {
     alignItems: 'center',
+  },
+  ctaContentContainer: {
+    alignItems: 'center',
+    marginHorizontal: 20,
   },
   optionsContentLabel: {
     paddingTop: 5,
@@ -82,25 +89,43 @@ const HomepageStyles = StyleSheet.create({
   ctaCardContainer: {
     width: '100%',
     height: 130,
-    padding: 25,
     alignItems: 'center', 
     flexDirection: 'row', 
     justifyContent: 'flex-start',
-    marginTop: 20,
+    marginVertical: 20,
+  },
+  expansesCardContainer: {
+    width: '100%',
+    height: 130,
+    alignItems: 'center', 
+    flexDirection: 'row', 
+    justifyContent: 'flex-start',
+    marginBottom: 20,
   },
   ctaButton: {
     marginTop: 10,
     backgroundColor: '#D9D9D9',
     borderRadius: 20,
   },
+  expansesGraphContainer: {
+    textAlign: 'center',
+    marginHorizontal: 20,
+    flex: 1,
+  },
+  expanseContentLabel: {
+    fontSize: 15,
+    textAlign: 'left',
+  },
 });
 
 function Homepage() {
   return (
+    <ScrollView> 
     <View style={HomepageStyles.flex}>
       <View style={HomepageStyles.homepageFlex}>
         <PWBasicCard
           style={HomepageStyles.cardContainer}
+          containerStyle={HomepageStyles.cardInnerContainer}
           rounded={true}
           backgroundColor="#fff"
         >
@@ -109,7 +134,7 @@ function Homepage() {
           <PPText style={HomepageStyles.cardAmount}>R$100,00</PPText>
           <PPTextRegular style={HomepageStyles.cardSubtitle}>R$250,00 em outros bancos</PPTextRegular>
         </View>
-        <Entypo name="chevron-thin-right" size={30} color="#303030" />
+        <Entypo  name="chevron-thin-right" size={30} color="#303030" />
       </PWBasicCard>
       
       {/* -- Slider Optionss Area */}
@@ -174,15 +199,25 @@ function Homepage() {
             rounded={true}
             backgroundColor="#fff"
           >
-            <View style={HomepageStyles.optionsContentContainer}>
+            <View style={HomepageStyles.ctaContentContainer}>
               <PPTextRegular  style={HomepageStyles.ctaContentLabel}> <PPTextRegular style={{ color: '#581C87' }}>Convide amigos</PPTextRegular> para desbloquear recompensas incríveis.</PPTextRegular>
               <PWBasicButton textStyle={{ color: '#303030' }}  style={HomepageStyles.ctaButton} text={'Saiba Mais'} />
             </View>
-          </PWBasicCard>
-
+        </PWBasicCard>
+         {/* -- PurpleWallet Expanses Graph */}
+         <PWBasicCard
+            style={HomepageStyles.expansesCardContainer}
+            containerStyle={HomepageStyles.cardInnerContainer}
+            rounded={true}
+            backgroundColor="#fff"
+          >
+            <View style={HomepageStyles.expansesGraphContainer}>
+              <PPTextRegular  style={HomepageStyles.expanseContentLabel}>Você ainda não possui despesas cadastradas este mês. Cadastre despesas como Aluguel, Internet e Luz para visualizar os dados.</PPTextRegular>
+            </View>
+        </PWBasicCard>
       </View>
-
     </View>
+    </ScrollView>
   );
 }
 
