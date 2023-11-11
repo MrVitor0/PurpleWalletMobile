@@ -51,6 +51,10 @@ const AuthStyles = StyleSheet.create({
     textCornerTopStyle: {
       fontSize: 12,
     },
+    textDateCornerTopStyle: {
+      fontSize: 12,
+      top: 1,
+    },
     formTitle: {
       fontSize: 22,
     },

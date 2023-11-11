@@ -56,7 +56,7 @@ const BasicButton: React.FC<BasicButtonProps> = ({
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
     >
-      <PPText style={buttonStyle.text}>
+      <PPText style={[buttonStyle.text, textStyle as ViewStyle]}>
         {text}
       </PPText>
     </Pressable>
