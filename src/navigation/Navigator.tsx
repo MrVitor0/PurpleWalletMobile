@@ -4,14 +4,20 @@ import { createStackNavigator } from '@react-navigation/stack';
 import AuthScreen from '../screens/auth/Login';
 import LoginStepTwo from '../screens/auth/LoginStepTwo';
 import WelcomeScreen from '../screens/WelcomePage';
-import DashboardScreen from '../screens/dashboard/Homepage';
+import HomepageScreen from '../screens/dashboard/Homepage';
 import AuthHeader from '../components/Navbar/AuthHeader';
 import DashboardHeader from '../components/Navbar/DashboardHeader';
+import BankAccountScreen from '../screens/dashboard/BankAccount';
+//Other navigators
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import CustomTabBar from '../components/Navbar/CustomTabBar';
+const Tab = createBottomTabNavigator();
 
 const AuthStack = createStackNavigator();
 const DashboardStack = createStackNavigator();
 const ApplicationStack = createStackNavigator();
 const Stack = createStackNavigator();
+
 
 
 function AuthStackNavigator() {
@@ -27,11 +33,16 @@ function AuthStackNavigator() {
 
 function DashboardStackNavigator() {
   return (
-    <DashboardStack.Navigator  screenOptions={{
-      header: () => <DashboardHeader />
-    }}>
-      <DashboardStack.Screen name="Homepage" component={DashboardScreen} />
-    </DashboardStack.Navigator>
+    <Tab.Navigator  
+      initialRouteName="Homepage" 
+      screenOptions={{ 
+        header: () => <DashboardHeader />,
+      }} 
+      tabBar={props => <CustomTabBar {...props} />}
+    >
+      <Tab.Screen name="Homepage" component={HomepageScreen} />
+      <Tab.Screen name="BankAccount" component={BankAccountScreen} />
+    </Tab.Navigator>
   );
 }
 

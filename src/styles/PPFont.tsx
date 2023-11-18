@@ -4,6 +4,6 @@ import * as Font from 'expo-font';
 export default async () => {
   return await Font.loadAsync({
     'Poppins-SemiBold': require('../assets/fonts/Poppins-SemiBold.ttf'),
-    'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf')
   });
 };

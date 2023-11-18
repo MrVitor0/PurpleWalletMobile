@@ -1,10 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, ImageBackground, ScrollView} from 'react-native';
 import { PWBasicButton, PWBasicCard } from '../../components';
-import { Entypo, MaterialCommunityIcons, Feather, MaterialIcons    } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons, Fontisto  } from '@expo/vector-icons'; 
 import PPText, { PPTextRegular } from '../../components/Label/PPText';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigation } from '../../navigation/Middleware';
 
 const HomepageStyles = StyleSheet.create({
   flex: {
@@ -120,12 +118,7 @@ const HomepageStyles = StyleSheet.create({
   },
 });
 
-
 function Homepage() {
-  const { navigate } = useNavigation<StackNavigation>();
-  const goToBankAccount = () => {
-    navigate('BankAccount');
-  }
   return (
     <ScrollView> 
     <View style={HomepageStyles.flex}>
@@ -134,7 +127,6 @@ function Homepage() {
           style={HomepageStyles.cardContainer}
           containerStyle={HomepageStyles.cardInnerContainer}
           rounded={true}
-          onPress={() => goToBankAccount()}
           backgroundColor="#fff"
         >
         <View>
@@ -142,7 +134,6 @@ function Homepage() {
           <PPText style={HomepageStyles.cardAmount}>R$100,00</PPText>
           <PPTextRegular style={HomepageStyles.cardSubtitle}>R$250,00 em outros bancos</PPTextRegular>
         </View>
-        <Entypo  name="chevron-thin-right" size={30} color="#303030" />
       </PWBasicCard>
       
       {/* -- Slider Optionss Area */}
@@ -153,8 +144,8 @@ function Homepage() {
             backgroundColor="#fff"
           >
             <View style={HomepageStyles.optionsContentContainer}>
-              <MaterialCommunityIcons  name="bank" size={30} color="#303030" />
-              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Contas</PPTextRegular>
+              <Fontisto name="shopping-basket-add" size={30} color="#303030" />
+              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Adicionar</PPTextRegular>
             </View>
           </PWBasicCard>
           <PWBasicCard
@@ -163,8 +154,8 @@ function Homepage() {
             backgroundColor="#fff"
           >
             <View style={HomepageStyles.optionsContentContainer}>
-              <Entypo name="credit-card" size={30} color="#303030" />
-              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Cartões</PPTextRegular>
+            <Fontisto name="shopping-basket-remove" size={30} color="#303030" />
+              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Remover</PPTextRegular>
             </View>
           </PWBasicCard>
           <PWBasicCard
@@ -173,8 +164,8 @@ function Homepage() {
             backgroundColor="#fff"
           >
             <View style={HomepageStyles.optionsContentContainer}>
-              <Feather name="activity" size={30} color="#303030" />
-              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Investimentos</PPTextRegular>
+              <MaterialCommunityIcons name="calendar-import" size={30} color="#303030" />
+              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Importar Extrato</PPTextRegular>
             </View>
           </PWBasicCard>
           <PWBasicCard
@@ -183,46 +174,12 @@ function Homepage() {
             backgroundColor="#fff"
           >
             <View style={HomepageStyles.optionsContentContainer}>
-              <MaterialIcons name="local-attraction" size={30} color="#303030" />
-              <PPTextRegular  style={HomepageStyles.optionsContentLabel}>Passeios</PPTextRegular>
+            <MaterialCommunityIcons name="help-circle-outline" size={30} color="black" />
+              <PPTextRegular  style={HomepageStyles.optionsContentLabel}>Ajuda</PPTextRegular>
             </View>
           </PWBasicCard>
         </View>
 
-        {/* -- Credit Card Area */}
-        <View style={HomepageStyles.creditCardContainer}>
-          <ImageBackground 
-            source={require('../../assets/cardbg4.png')}
-            style={HomepageStyles.creditCardBackground}
-          >
-            <View style={HomepageStyles.creditCardTexts}>
-              <PPText style={HomepageStyles.creditCardTitle}>R$ 250,00</PPText>
-            </View>
-            <PPText style={HomepageStyles.creditCardSubtitle}>Cartões de Crédito</PPText>
-          </ImageBackground>
-        </View>
-        {/* -- PurpleWallet Call to Action */}
-        <PWBasicCard
-            style={HomepageStyles.ctaCardContainer}
-            rounded={true}
-            backgroundColor="#fff"
-          >
-            <View style={HomepageStyles.ctaContentContainer}>
-              <PPTextRegular  style={HomepageStyles.ctaContentLabel}> <PPTextRegular style={{ color: '#581C87' }}>Convide amigos</PPTextRegular> para desbloquear recompensas incríveis.</PPTextRegular>
-              <PWBasicButton textStyle={{ color: '#303030' }}  style={HomepageStyles.ctaButton} text={'Saiba Mais'} />
-            </View>
-        </PWBasicCard>
-         {/* -- PurpleWallet Expanses Graph */}
-         <PWBasicCard
-            style={HomepageStyles.expansesCardContainer}
-            containerStyle={HomepageStyles.cardInnerContainer}
-            rounded={true}
-            backgroundColor="#fff"
-          >
-            <View style={HomepageStyles.expansesGraphContainer}>
-              <PPTextRegular  style={HomepageStyles.expanseContentLabel}>Você ainda não possui despesas cadastradas este mês. Cadastre despesas como Aluguel, Internet e Luz para visualizar os dados.</PPTextRegular>
-            </View>
-        </PWBasicCard>
       </View>
     </View>
     </ScrollView>

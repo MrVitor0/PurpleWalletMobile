@@ -8,6 +8,8 @@ import * as Font from 'expo-font';
 import PPFonts from './src/styles/PPFont';
 import PPText from './src/components/Label/PPText';
 import LoadingScreen from './src/screens/LoadingScreen';
+
+
 export default class App extends Component {
   state = {
     isFontLoaded: false,

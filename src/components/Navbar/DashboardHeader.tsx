@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, Button } from 'react-native';
+import { View, Image, StyleSheet, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import PWBasicButton from '../Button/PWBasicButton';
 import { DashboardHeaderStyles, AuthStyles } from '../../styles/sharedStyles';
 import { SimpleLineIcons } from '@expo/vector-icons'; 
+import { PPTextRegular } from '../Label/PPText';
 
 
 const DashboardHeader = () => {
@@ -14,7 +15,7 @@ const DashboardHeader = () => {
           style={DashboardHeaderStyles.userPicture}
           source={require('../../assets/userpopup.png')}
         />
-        <Text style={DashboardHeaderStyles.userNameLabel}>Olá, Vitor</Text>
+        <PPTextRegular style={DashboardHeaderStyles.userNameLabel}>Olá, Vitor</PPTextRegular>
       </View>
       <View style={DashboardHeaderStyles.buttonContainer}>
         <SimpleLineIcons name="settings" style={DashboardHeaderStyles.iconStyle} size={24} color="#fff" />
