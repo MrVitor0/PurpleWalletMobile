@@ -111,6 +111,7 @@ const HomepageStyles = StyleSheet.create({
   },
   expansesGraphContainer: {
     textAlign: 'center',
+    
     marginHorizontal: 20,
     flex: 1,
   },

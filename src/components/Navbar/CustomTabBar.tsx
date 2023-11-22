@@ -11,8 +11,8 @@ function MyTabBar({ state, descriptors, navigation }) {
             alignSelf: 'center', 
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#fff6ff',
-            borderRadius: 20,
+            backgroundColor: '#F5F5F5',
+            borderRadius: 30,
             bottom: 30,
         },
         tabBarHolder: {
@@ -28,7 +28,7 @@ function MyTabBar({ state, descriptors, navigation }) {
             justifyContent: 'center',
         },
         selectedBar: {
-            backgroundColor: 'rgba(255, 255, 255, 1)',
+            backgroundColor: '#EBEBEB',
             borderRadius: 20,
             padding: 5,
         }

@@ -69,4 +69,4 @@ function Navigator() {
 }
 
 
-export default DashboardStackNavigator;
+export default Navigator;

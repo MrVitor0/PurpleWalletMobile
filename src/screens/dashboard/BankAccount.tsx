@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, ImageBackground, ScrollView} from 'react-native';
-import { PWBasicButton, PWBasicCard } from '../../components';
+import { PWBasicButton, PWBasicCard, PWBasicTable } from '../../components';
 import { MaterialCommunityIcons, Fontisto  } from '@expo/vector-icons'; 
 import PPText, { PPTextRegular } from '../../components/Label/PPText';
 
-const HomepageStyles = StyleSheet.create({
+const bankAccountStyles = StyleSheet.create({
   flex: {
     flex: 1,
   },
@@ -116,69 +116,104 @@ const HomepageStyles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'left',
   },
+  historyContainer: {
+    width: '100%',
+    height: '100%',
+  }, 
+  historyItem: {
+    width: '100%',
+    marginBottom: 10,
+  },
+ 
 });
 
 function Homepage() {
   return (
     <ScrollView> 
-    <View style={HomepageStyles.flex}>
-      <View style={HomepageStyles.homepageFlex}>
+    <View style={bankAccountStyles.flex}>
+      <View style={bankAccountStyles.homepageFlex}>
         <PWBasicCard
-          style={HomepageStyles.cardContainer}
-          containerStyle={HomepageStyles.cardInnerContainer}
+          style={bankAccountStyles.cardContainer}
+          containerStyle={bankAccountStyles.cardInnerContainer}
           rounded={true}
           backgroundColor="#fff"
         >
         <View>
-          <PPTextRegular style={HomepageStyles.cardTitle}>Saldo em Conta</PPTextRegular>
-          <PPText style={HomepageStyles.cardAmount}>R$100,00</PPText>
-          <PPTextRegular style={HomepageStyles.cardSubtitle}>R$250,00 em outros bancos</PPTextRegular>
+          <PPTextRegular style={bankAccountStyles.cardTitle}>Saldo em Conta</PPTextRegular>
+          <PPText style={bankAccountStyles.cardAmount}>R$100,00</PPText>
+          <PPTextRegular style={bankAccountStyles.cardSubtitle}>R$250,00 em outros bancos</PPTextRegular>
         </View>
       </PWBasicCard>
       
       {/* -- Slider Optionss Area */}
-      <View style={HomepageStyles.optionsContainer}>
+      <View style={bankAccountStyles.optionsContainer}>
           <PWBasicCard
-            style={HomepageStyles.optionsCardContainer}
+            style={bankAccountStyles.optionsCardContainer}
             rounded={true}
             backgroundColor="#fff"
           >
-            <View style={HomepageStyles.optionsContentContainer}>
+            <View style={bankAccountStyles.optionsContentContainer}>
               <Fontisto name="shopping-basket-add" size={30} color="#303030" />
-              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Adicionar</PPTextRegular>
+              <PPTextRegular style={bankAccountStyles.optionsContentLabel}>Adicionar</PPTextRegular>
             </View>
           </PWBasicCard>
           <PWBasicCard
-            style={HomepageStyles.optionsCardContainer}
+            style={bankAccountStyles.optionsCardContainer}
             rounded={true}
             backgroundColor="#fff"
           >
-            <View style={HomepageStyles.optionsContentContainer}>
+            <View style={bankAccountStyles.optionsContentContainer}>
             <Fontisto name="shopping-basket-remove" size={30} color="#303030" />
-              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Remover</PPTextRegular>
+              <PPTextRegular style={bankAccountStyles.optionsContentLabel}>Remover</PPTextRegular>
             </View>
           </PWBasicCard>
           <PWBasicCard
-            style={HomepageStyles.optionsCardContainer}
+            style={bankAccountStyles.optionsCardContainer}
             rounded={true}
             backgroundColor="#fff"
           >
-            <View style={HomepageStyles.optionsContentContainer}>
+            <View style={bankAccountStyles.optionsContentContainer}>
               <MaterialCommunityIcons name="calendar-import" size={30} color="#303030" />
-              <PPTextRegular style={HomepageStyles.optionsContentLabel}>Importar Extrato</PPTextRegular>
+              <PPTextRegular style={bankAccountStyles.optionsContentLabel}>Importar Extrato</PPTextRegular>
             </View>
           </PWBasicCard>
           <PWBasicCard
-            style={HomepageStyles.optionsCardContainer}
+            style={bankAccountStyles.optionsCardContainer}
             rounded={true}
             backgroundColor="#fff"
           >
-            <View style={HomepageStyles.optionsContentContainer}>
+            <View style={bankAccountStyles.optionsContentContainer}>
             <MaterialCommunityIcons name="help-circle-outline" size={30} color="black" />
-              <PPTextRegular  style={HomepageStyles.optionsContentLabel}>Ajuda</PPTextRegular>
+              <PPTextRegular  style={bankAccountStyles.optionsContentLabel}>Ajuda</PPTextRegular>
             </View>
           </PWBasicCard>
-        </View>
+      </View>
+      {/* -- History Area */}
+      <View>
+        <PWBasicTable
+              style={[bankAccountStyles.historyContainer, {marginTop: 20}]}
+              rounded={true}
+              backgroundColor="#fff"
+            >
+              
+          <PWBasicCard
+            style={bankAccountStyles.historyItem}
+            rounded={true}
+            backgroundColor="#F4F4F4"
+          >
+              <PPTextRegular style={bankAccountStyles.ctaContentLabel}>Últimas Transações</PPTextRegular>
+          </PWBasicCard>
+
+          <PWBasicCard
+            style={bankAccountStyles.historyItem}
+            rounded={true}
+            backgroundColor="#F4F4F4"
+          >
+              <PPTextRegular style={bankAccountStyles.ctaContentLabel}>Últimas Transações</PPTextRegular>
+          </PWBasicCard>
+
+        </PWBasicTable>
+      </View>
 
       </View>
     </View>
