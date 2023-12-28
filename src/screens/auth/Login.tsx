@@ -26,7 +26,7 @@ function Login() {
       />
       <View style={AuthStyles.alignItems}>
         <PPText style={AuthStyles.formTitle}>
-          Boas-vindas ao PurpleWallet!
+          Bem-Vindo(a) ao PurpleWallet!
           {'\n'}
           Qual é o seu e-mail?
         </PPText>
@@ -36,17 +36,13 @@ function Login() {
         <TextInput
           style={AuthStyles.textInput}
           placeholder="John@doe.com"
-          placeholderTextColor="#303030"
+          placeholderTextColor="#949494rawfa2412541"
           onChangeText={(text) => setEmail(text)}
         />
       </View>
       <View style={AuthStyles.buttonContainer} >
-          <PWNextButton color="#A244FF" size={80} onPress={() => validateUserEmailAndGo()}>
-            <MaterialCommunityIcons
-              name="account-arrow-right-outline"
-              color={AuthStyles.buttonIcon.color}
-              size={AuthStyles.buttonIcon.size}
-            />
+          <PWNextButton color="#530F7D" size={40}  width={70} onPress={() => validateUserEmailAndGo()}>
+           <PPText style={{ color: "#FFFFFF",fontSize: 18}}>Seguinte</PPText>
           </PWNextButton>
       </View>
     </View>

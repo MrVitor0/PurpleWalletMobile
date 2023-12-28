@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const AuthStyles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#EBEBEB',
+      backgroundColor: '#FFFFFF',
       paddingHorizontal: 20,
       paddingTop: 40 // Adicione o padding no topo
     },
@@ -17,8 +17,8 @@ const AuthStyles = StyleSheet.create({
     buttonContainer: {
       flex: 1,
       justifyContent: 'flex-end', 
-      alignItems: 'flex-end',
-      paddingBottom: 40
+      alignItems: 'center',
+      paddingBottom: 80
     },
     buttonGroupContainer: {
       flexDirection: 'row',
@@ -57,16 +57,17 @@ const AuthStyles = StyleSheet.create({
     },
     formTitle: {
       fontSize: 22,
+      color: '#530F7D',
     },
     formSubTitle: {
       fontSize: 12,
       textAlign: 'left',
-      color: '#303030',
+      color: '#654678',
       marginBottom: 20,
     },
     textInput: {
       borderBottomWidth: 1,
-      borderBottomColor: 'rgba(48, 48, 48, 0.2)',
+      borderBottomColor: '#654678',
       fontSize: 16,
       marginBottom: 20,
     },

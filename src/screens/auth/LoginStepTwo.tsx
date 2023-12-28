@@ -11,8 +11,8 @@ import PPText from '../../components/Label/PPText';
 const styles = StyleSheet.create({
   formForgotPassword: {
     fontSize: 10,
-    textAlign: 'left',
-    color: 'rgba(48, 48, 48, 0.7)',
+    textAlign: 'center',
+    color: '#530F7D',
     marginBottom: 20,
   },
 });
@@ -44,26 +44,23 @@ function Login() {
           Qual é a sua senha?
         </PPText>
         <PPText style={AuthStyles.formSubTitle}>
-        Encontramos o seu cadastro, porém, por questões de segurança, precisamos confirmar a sua identidade. Por favor, digite a sua senha.
+        Por favor, informe a sua senha para
+        seguir com o login.
         </PPText>
         <TextInput
           style={AuthStyles.textInput}
-          placeholder="*******"
+          placeholder="***********"
           secureTextEntry={true}
-          placeholderTextColor="#303030"
+          placeholderTextColor="#654678"
           onChangeText={(text) => setPassword(text)}
         />
         <PPText style={styles.formForgotPassword}  >
-          Esqueceu a sua senha? Clique aqui
+          Esqueceu sua senha? 
         </PPText>
       </View>
       <View style={AuthStyles.buttonContainer} >
-          <PWNextButton color="#A244FF" size={80} onPress={() => validatePasswordAndPassword()}>
-            <MaterialCommunityIcons
-              name="account-arrow-right-outline"
-              color={AuthStyles.buttonIcon.color}
-              size={AuthStyles.buttonIcon.size}
-            />
+          <PWNextButton color="#530F7D" size={40}  width={70} onPress={() => validatePasswordAndPassword()}>
+           <PPText style={{ color: "#FFFFFF",fontSize: 18}}>Seguinte</PPText>
           </PWNextButton>
       </View>
     </View>

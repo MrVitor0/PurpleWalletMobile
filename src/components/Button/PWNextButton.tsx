@@ -4,6 +4,7 @@ import { Pressable, ViewStyle, StyleProp, StyleSheet } from 'react-native';
 interface PWNextButtonProps {
   color?: string;
   size?: number;
+  width?: number;
   style?: StyleProp<ViewStyle>;
   onPress?: () => void;
   children?: ReactNode;
@@ -12,6 +13,7 @@ interface PWNextButtonProps {
 const PWNextButton: React.FC<PWNextButtonProps> = ({
   color = 'blue',
   size = 50,
+  width = 50,
   style = {},
   onPress = () => {},
   children,
@@ -27,7 +29,7 @@ const PWNextButton: React.FC<PWNextButtonProps> = ({
     button: {
       backgroundColor: color,
       borderRadius: size / 2,
-      width: size,
+      width: `${width}%`, 
       height: size,
       justifyContent: 'center',
       alignItems: 'center',
