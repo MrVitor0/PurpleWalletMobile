@@ -37,11 +37,16 @@ function DashboardStackNavigator() {
       initialRouteName="Homepage" 
       screenOptions={{ 
         header: () => <DashboardHeader />,
+        //set backgrond color
+        tabBarStyle: { backgroundColor: '#FFFFFF' },
+        
       }} 
       tabBar={props => <CustomTabBar {...props} />}
     >
       <Tab.Screen name="Homepage" component={HomepageScreen} />
       <Tab.Screen name="BankAccount" component={BankAccountScreen} />
+      <Tab.Screen name="Profile" component={BankAccountScreen} />
+      <Tab.Screen name="Settings" component={BankAccountScreen} />
     </Tab.Navigator>
   );
 }
@@ -62,7 +67,7 @@ function Navigator() {
       headerShown: false,
     }}>
       <Stack.Screen name="Application" component={ApplicationStackNavigator} />
-      <Stack.Screen name="Auth" component={AuthStackNavigator} />
+      <Stack.Screen name="Auth" component={AuthStackNavigator}  />
       <Stack.Screen name="Dashboard" component={DashboardStackNavigator} />
     </Stack.Navigator>
   );

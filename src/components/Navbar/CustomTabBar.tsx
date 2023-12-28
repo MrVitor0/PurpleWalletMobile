@@ -7,11 +7,23 @@ function MyTabBar({ state, descriptors, navigation }) {
         container: {
             flexDirection: 'row',
             height: 60,
-            width: '50%', 
+            width: '65%', 
             alignSelf: 'center', 
             alignItems: 'center',
             justifyContent: 'center',
             backgroundColor: '#F5F5F5',
+            //bottom shadow
+            shadowColor: '#000',
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 20,
+           
+
+
             borderRadius: 30,
             bottom: 30,
         },
@@ -29,11 +41,11 @@ function MyTabBar({ state, descriptors, navigation }) {
         },
         selectedBar: {
             backgroundColor: '#EBEBEB',
-            borderRadius: 20,
-            padding: 5,
+            borderRadius: 15,
+            padding: 7,
         }
     });
-    const allowedRoutes = ['Homepage', 'BankAccount'];
+    const allowedRoutes = ['Homepage', 'BankAccount', 'Profile', 'Settings'];
     return (
         <View style={tabBarStyles.tabBarHolder}>
             <View style={tabBarStyles.container}>
@@ -67,9 +79,13 @@ function MyTabBar({ state, descriptors, navigation }) {
                 const labelIcon = (label) => {
                     switch (label) {
                         case 'Homepage':
-                            return 'menu-open'
+                            return 'home'
                         case 'BankAccount':
-                            return 'bank-transfer'
+                            return 'bank'
+                        case 'Profile':
+                            return 'credit-card'
+                        case 'Settings':
+                            return 'piggy-bank'
                         default:
                             return 'home-analytics'
                             break;
@@ -85,7 +101,7 @@ function MyTabBar({ state, descriptors, navigation }) {
                             {label}
                         </Text> */}
                         <View style={isFocused ? tabBarStyles.selectedBar : {}}  >
-                         <MaterialCommunityIcons name={labelIcon(label) as any} size={40} color="#581C87" />
+                         <MaterialCommunityIcons name={labelIcon(label) as any} size={25} color="#581C87" />
                         </View>
                        
                     </Pressable>

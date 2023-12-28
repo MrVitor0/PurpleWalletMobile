@@ -11,16 +11,18 @@ interface CardProps {
     style?: StyleProp<ViewStyle>;
     containerStyle?: StyleProp<ViewStyle>;
     children?: React.ReactNode;
+    canBePressed?: boolean; // nova propriedade
     onPress?: () => void; // nova propriedade
 }
 
 const Card: React.FC<CardProps> = ({
     rounded = false,
-    backgroundColor = '#fff',
+    backgroundColor = '#EBEBEB',
     backgroundImage,
     height = 80,
     width = 100,
     style = {},
+    canBePressed = false, // nova propriedade
     containerStyle = {},
     shadow = false,
     children,
@@ -36,6 +38,11 @@ const Card: React.FC<CardProps> = ({
       setIsPressed(false);
     };
 
+    //check if onPress is defined
+    if (onPress) {
+        canBePressed = true;
+    }
+
     
     const styles = StyleSheet.create({
         card: {
@@ -50,7 +57,7 @@ const Card: React.FC<CardProps> = ({
                 width: 0,
                 height: 2,
             },
-            opacity: isPressed ? 0.7 : 1,
+            opacity: isPressed && canBePressed ? 0.7 : 1,
             shadowOpacity: 0.25,
             shadowRadius: 3.84,
             elevation: 5,

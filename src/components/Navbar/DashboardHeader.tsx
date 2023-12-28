@@ -15,20 +15,10 @@ const DashboardHeader = () => {
           style={DashboardHeaderStyles.userPicture}
           source={require('../../assets/userpopup.png')}
         />
-        <PPTextRegular style={DashboardHeaderStyles.userNameLabel}>Olá, Vitor</PPTextRegular>
+        <PPTextRegular style={DashboardHeaderStyles.userNameLabel}>Olá, <PPTextRegular style={{ color:  '#530F7D', fontWeight: 'bold'}}>Vitor</PPTextRegular> </PPTextRegular>
       </View>
       <View style={DashboardHeaderStyles.buttonContainer}>
-        <SimpleLineIcons name="settings" style={DashboardHeaderStyles.iconStyle} size={24} color="#fff" />
-        <SimpleLineIcons name="question" style={DashboardHeaderStyles.iconStyle} size={24} color="#fff" />
-        <PWBasicButton 
-            size='small'
-            style={AuthStyles.buttonCornerTopRight}
-            textStyle={AuthStyles.textDateCornerTopStyle}
-            text="Outubro/23"
-            rounded
-            color="#fff"
-            textColor="#303030"
-        />
+        <SimpleLineIcons name="menu" style={DashboardHeaderStyles.iconStyle} size={24} color="#654678" />
       </View>
     </View>
   );

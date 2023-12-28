@@ -82,7 +82,7 @@ const DashboardHeaderStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#581C87',
+    backgroundColor: '#fff',
     paddingTop: 60, // Adicione o padding no topo
     paddingBottom: 10, // Adicione o padding no rodapé
     paddingHorizontal: 10, // Adicione o padding horizontal
@@ -98,8 +98,8 @@ const DashboardHeaderStyles = StyleSheet.create({
     borderRadius: 25,
   },
   userNameLabel: {
-    color: '#fff',
-    fontSize: 16,
+    color: '#654678',
+    fontSize: 18,
   },
   container: {
     flex: 1,

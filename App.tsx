@@ -35,7 +35,7 @@ export default class App extends Component {
     return (
       <NavigationContainer>
         <StatusBar style="light" />
-        <Navigator />
+        <Navigator  />
       </NavigationContainer>
     );
   }

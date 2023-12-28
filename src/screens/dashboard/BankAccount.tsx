@@ -7,6 +7,7 @@ import PPText, { PPTextRegular } from '../../components/Label/PPText';
 const bankAccountStyles = StyleSheet.create({
   flex: {
     flex: 1,
+    backgroundColor: '#FFFFFF',
   },
   homepageFlex: {
     flex: 1,

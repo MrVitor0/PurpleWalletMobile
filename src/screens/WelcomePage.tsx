@@ -21,7 +21,7 @@ function WelcomePage() {
           />
           <View style={styles.buttonContainer} >
             <PPText style={styles.welcomeMessage}>A simplicidade financeira leva ao sucesso financeiro</PPText>
-            <PWBasicButton style={styles.buttonStyle} size='medium' rounded text="Começar" onPress={() => goToLogin()}  />
+            <PWBasicButton style={styles.buttonStyle} textStyle={{ fontSize: 18 }} size='medium' rounded text="Começar" onPress={() => goToLogin()}  />
           </View>
       </View>
        
