@@ -212,7 +212,7 @@ function Homepage() {
         <PWBasicCard
             style={HomepageStyles.ctaCardContainer}
             rounded={true}
-            backgroundColor="#EBEBEB"
+            backgroundColor="#EBEBEA"
           >
             <View style={HomepageStyles.ctaContentContainer}>
               <PPTextRegular  style={HomepageStyles.ctaContentLabel}> <PPTextRegular style={{ color: '#581C87' }}>Convide amigos</PPTextRegular> para desbloquear recompensas incríveis.</PPTextRegular>
